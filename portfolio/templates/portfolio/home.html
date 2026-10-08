@@ -1,0 +1,16 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+<div class = "row align-items-center">
+<div class = "col-md-4 text-center mb-4 mb-md-8">
+    <img src = "{% static 'img/profile.webp' %}" alt = "Profile Picture" class = "img-fluid rounded-circle shadow-sm">
+</div>
+    <div class = "col-md-8">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm a passionate developer with experience in creating web applications.</p>
+        <hr class = "my-4">
+        <p>Feel free to explore my projects and skills.</p>
+        <a class = "btn btn-primary btn-lg" href = "{% url 'projects' %}" role = "button">View Projects</a>
+    </div>
+</div>
+{% endblock %}

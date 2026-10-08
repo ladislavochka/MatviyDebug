@@ -1,0 +1,48 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+<div class = "text-center mb-5">
+    <h1>My Projects</h1>
+    <p>Here are some of the projects I've worked on:</p>
+</div>
+
+<div class = "row row-cols-1 row-cols-md-2 g-4">
+    <div class = "col">
+        <div class = "card h-100">
+            <img src = "{% static '/img/project1.png' %}"  class = "card-img-top project-img" alt = "Project 1">
+            <div class = "card-body">
+                <h5 class = "card-title">Шахматы ;)</h5>
+                <p class = "card-text">пофаниться</p>
+                <div class = "card-footer">
+                    <a href="{% static 'files/chess.zip' %}" download class="btn btn-primary">Download Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "col">
+        <div class = "card h-100">
+            <img src = "{% static '/img/project2.png' %}" class = "card-img-top project-img" alt = "Project 2">
+            <div class = "card-body">
+                <h5 class = "card-title">Проэкт сайта монобанка</h5>
+                <p class = "card-text">ох сколько нервов на него ушло</p>
+                <div class = "card-footer">
+                    <a href="{% static 'files/fix_mono.zip' %}" download class="btn btn-primary">Download Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "col">
+        <div class = "card h-100">
+            <img src = "{% static '/img/project3.png' %}" class = "card-img-top project-img" alt = "Project 3">
+            <div class = "card-body">
+                <h5 class = "card-title">Бильярдик</h5>
+                <p class = "card-text">ну без него никуда :)</p>
+                <div class = "card-footer">
+                    <a href="{% static 'files/бильярд.zip' %}" download class="btn btn-primary">Download Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+{% endblock %}

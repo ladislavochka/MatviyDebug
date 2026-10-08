@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Portfolio theme: Django green + Python yellow
+   Loaded AFTER Bootstrap, so it overrides Bootstrap's variables and classes.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --ink: #092e20;
+    --green: #0c4b33;
+    --paper: #f2f5f1;
+    --yellow: #ffd43b;
+    --muted: #4e6358;
+    --line: rgba(9, 46, 32, 0.16);
+
+    --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    /* Bootstrap variable overrides */
+    --bs-body-font-family: var(--font-body);
+    --bs-body-color: var(--ink);
+    --bs-body-color-rgb: 9, 46, 32;
+    --bs-secondary-color: var(--muted);
+    --bs-light-rgb: 242, 245, 241;
+    --bs-dark-rgb: 9, 46, 32;
+    --bs-primary: #0c4b33;
+    --bs-primary-rgb: 12, 75, 51;
+}
+
+::selection {
+    background: var(--yellow);
+    color: var(--ink);
+}
+
+/* ---------- Page frame ---------- */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    line-height: 1.65;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1080px;
+    margin-inline: auto;
+    padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 4vw, 2rem);
+}
+
+/* ---------- Type ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+main h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+}
+
+main > .text-center p {
+    max-width: 36rem;
+    margin-inline: auto;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
+
+header.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    padding: 0.85rem clamp(1.25rem, 4vw, 3rem);
+    --bs-box-shadow-sm: none;
+    --bs-navbar-color: rgba(255, 255, 255, 0.8);
+    --bs-navbar-hover-color: var(--yellow);
+    --bs-navbar-active-color: var(--yellow);
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: var(--yellow);
+}
+
+header.navbar .navbar-brand {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* The template's <nav class="container"> sits inside the flex header */
+header.navbar > nav {
+    width: auto;
+    max-width: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+header.navbar .navbar-nav {
+    flex-direction: row;
+    gap: 0.25rem;
+}
+
+header.navbar .nav-link {
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+header.navbar a:focus-visible {
+    outline-color: var(--yellow);
+}
+
+/* The toggler has no collapsible target in the template, so it does nothing */
+header.navbar .navbar-toggler {
+    display: none;
+}
+
+/* ---------- Home hero ---------- */
+
+main > .row.align-items-center h1 {
+    font-size: clamp(2.75rem, 7vw, 4.75rem);
+    line-height: 1.02;
+}
+
+main > .row.align-items-center p {
+    max-width: 34rem;
+    font-size: 1.15rem;
+}
+
+/* Avatar: a circle with a hard yellow offset shadow */
+img.rounded-circle {
+    width: min(100%, 17.5rem);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 3px solid var(--ink);
+    background: var(--green);
+    --bs-box-shadow-sm: 14px 14px 0 var(--yellow);
+}
+
+main hr {
+    width: 4rem;
+    height: 4px;
+    margin: 1.75rem 0;
+    border: 0;
+    background: var(--green);
+    opacity: 1;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.btn-primary {
+    --bs-btn-color: var(--ink);
+    --bs-btn-bg: var(--yellow);
+    --bs-btn-border-color: var(--ink);
+    --bs-btn-border-width: 2px;
+    --bs-btn-border-radius: 0.25rem;
+    --bs-btn-hover-color: var(--yellow);
+    --bs-btn-hover-bg: var(--ink);
+    --bs-btn-hover-border-color: var(--ink);
+    --bs-btn-active-color: var(--yellow);
+    --bs-btn-active-bg: var(--ink);
+    --bs-btn-active-border-color: var(--ink);
+    --bs-btn-focus-shadow-rgb: 9, 46, 32;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+    --bs-card-bg: #fff;
+    --bs-card-border-color: var(--line);
+    --bs-card-border-radius: 0.375rem;
+    --bs-card-inner-border-radius: calc(0.375rem - 1px);
+    --bs-card-spacer-x: 1.5rem;
+    --bs-card-spacer-y: 1.5rem;
+    overflow: hidden;
+}
+
+/* Skills cards use .shadow-sm.border-0: replace the shadow with a hairline ring */
+.card.shadow-sm {
+    --bs-box-shadow-sm: 0 0 0 1px var(--line);
+}
+
+.card-title {
+    font-size: 1.4rem;
+}
+
+.card-text {
+    max-width: 40ch;
+    color: var(--muted);
+}
+
+.project-img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--green);
+}
+
+/* Projects: keep the button at the bottom of equal-height cards */
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    margin-top: auto;
+    padding: 1.25rem 0 0;
+    border: 0;
+    background: none;
+}
+
+/* ---------- Skills ---------- */
+
+.card > h3 {
+    font-size: 1.6rem;
+}
+
+.list-group {
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: var(--line);
+    --bs-list-group-item-padding-y: 0.8rem;
+}
+
+.list-group-item {
+    font-size: 1.05rem;
+}
+
+.list-group-item .badge {
+    --bs-primary-rgb: 255, 212, 59;
+    --bs-badge-color: var(--ink);
+    --bs-badge-border-radius: 0.25rem;
+    --bs-badge-padding-x: 0.65em;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Skill levels are on a 1 to 5 scale */
+.list-group-item .badge::after {
+    content: " / 5";
+    font-weight: 500;
+    opacity: 0.65;
+}
+
+/* ---------- Footer ---------- */
+
+body > footer {
+    --bs-white-rgb: 9, 46, 32;
+    --bs-secondary-color: rgba(255, 255, 255, 0.72);
+    --bs-border-color: transparent;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

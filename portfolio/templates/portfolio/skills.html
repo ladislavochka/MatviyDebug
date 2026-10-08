@@ -1,0 +1,56 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+<div class = "text-center mb-5">
+    <h1>My Skills</h1>
+    <p class = 'text-muted'>Here are some of the skills I've developed:</p>
+</div>
+<div class = "row">
+    <div class = "col-md-6 mb-4">
+        <div class = "card shadow-sm border-0 p-4 h-100">
+           <h3 class = "text-primary mb-3">Hard Skills</h3>
+            <ul class = "list-group list-group-flush">
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    Python(OOP, Basic)
+                    <span class = "badge bg-primary badge-pill">5</span>
+                </li>
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    Django Framework
+                    <span class = "badge bg-primary badge-pill">4</span>
+                </li>
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    JavaScript
+                    <span class = "badge bg-primary badge-pill">4</span>
+                </li>
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    HTML & CSS
+                    <span class = "badge bg-primary badge-pill">5</span>
+                </li>
+            </ul> 
+        </div>
+    </div>
+<div class = "col-md-6 mb-4">
+        <div class = "card shadow-sm border-0 p-4 h-100">
+            <h3 class = "text-primary mb-3">Soft Skills</h3>
+            <ul class = "list-group list-group-flush">
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    Communication
+                    <span class = "badge bg-primary badge-pill">5</span>
+                </li>
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    Teamwork
+                    <span class = "badge bg-primary badge-pill">4</span>
+                </li>
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    Problem Solving
+                    <span class = "badge bg-primary badge-pill">5</span>
+                </li>
+                <li class = "list-group-item d-flex justify-content-between align-items-center">
+                    Time Management
+                    <span class = "badge bg-primary badge-pill">4</span>
+                </li>
+            </ul> 
+        </div>
+    </div>
+</div>
+{% endblock %}
